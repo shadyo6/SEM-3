@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #div1 {
+        width: 250px;
+        height: 250px;
+        padding: 10px;
+        border: 4px dashed #aa5510;
+      }
+      h1 {
+        font-family: Monospace;
+        color: #11bb22;
+        text-align: justify;
+      }
+    </style>
+    <script>
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+      function drag(ev) {
+        ev.dataTransfer.setData("tgt", ev.target.id);
+      }
+      function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("tgt");
+        ev.target.appendChild(document.getElementById(data));
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Drag & Drop the Image into the Square Box</h1>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br>
+    <img id="drag1" src="hqdefault.jpg"
+    draggable="true" ondragstart="drag(event)" width="250" height="250">
+  </body>
+</html>

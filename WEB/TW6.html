@@ -1,0 +1,44 @@
+<!doctype html> 
+<html lang ="en"> 
+    <head> 
+        <title>jOuery UI Datepicker</title> 
+        <link rel="stylesheet"  href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+        <style> 
+            #datepicker{ 
+                width: 100; 
+                height: 10; 
+            } 
+        </style> 
+        <script> 
+            $(function(){ 
+                $("#datepicker").datepicker({ 
+                    showOn:"button", 
+                    buttonImage: "icons8-calendar-48.png", 
+                    buttonImageOnly : true 
+                }); 
+            }); 
+        </script> 
+    </head> 
+    <body> 
+        <div ng-app="DemoApp" ng-controller="DemoController"> 
+            <h1>Datepicker</h1> 
+            <input type="text" ng-model="jDate" id="datepicker"> 
+            <button onclick="disp();">Submit</button> 
+            <p ng-bind="jDate"></p> 
+            <p id="demo"></p> 
+        </div> 
+    </body> 
+    <script> 
+        var app=angular.module(" ",[]); 
+        app.controller("DemoController",function($scope){ 
+                $scope.jDate=" "; 
+        }); 
+        function disp(){ 
+            var x="The date picked is : "+document.getElementById("datepicker").value; 
+            document.getElementById("demo").innerHTML = x; 
+        } 
+    </script> 
+</html> 
+

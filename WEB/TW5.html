@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js"></script>
+<script src="angular-route.js"></script>
+
+<body ng-app="myApp">
+	<a href="#!l1">Link1</a>
+	<a href="#!l2">Link2</a>
+	<a href="#!l3">Link3</a>
+	<div ng-view></div>
+	<script>
+		var app = angular.module("myApp", ["ngRoute"]);
+		app.config(function($routeProvider) {
+			$routeProvider
+			.when("/l1", {
+				template : "<h4>I am big!!</h3>"
+			})
+			.when("/l2", {
+				template : "<h2>I am bigger!!</h2>"
+			})
+			.when("/l3", {
+				template : "<h1>So what?? I'm a bigger loser!!</h1>"
+			});
+		});
+	</script>
+</body>
+</html>

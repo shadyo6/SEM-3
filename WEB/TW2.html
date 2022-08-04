@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      .dropdowm-submenu {
+        position: relative;
+      }
+      .dropdowm-submenu.dropdown-menu {
+        left: 100%;
+      }
+      .dropdowm-submenu:hover {
+        background-color: aquamarine;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $(".dropdown-submenu a.test").on("click", function (e) {
+          $(this).next("ul").toggle();
+          e.stopPropagation();
+          e.preventDefault();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h2>Elective Subject</h2>
+      <div class="dropdown">
+        <button
+          class="btn btn-default dropdown-toggle"
+          type="button"
+          data-toggle="dropdown"
+        >
+          Subject Dropdown<span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">7th semester</a></li>
+          <li><a href="#">5th semester</a></li>
+          <li class="dropdown-submenu">
+            <a class="test" href="#"
+              >3rd semester <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">DS</a></li>
+              <li><a href="#">java</a></li>
+              <li><a href="#">web</a></li>
+              <li><a href="#">CO</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

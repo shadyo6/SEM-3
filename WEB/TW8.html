@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>jQuery UI Autocomplete</title>
+        <link href="https://code.jquery.com/ui/1.10.4/themes/uilightness/jquery-ui.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script>
+            $(function(){
+                var availableTags = [
+                    "Action Script",
+                    "AppleScript",
+                    "Asp",
+                    "BASIC",
+                    "C++",
+                    "C",
+                    "Clojure",
+                    "COBOL",
+                    "coldFusion",
+                    "Erlang",
+                    "Fortran",
+                    "Groovy",
+                    "Haskell",
+                    "Java",
+                    "JavaScript",
+                    "Lisp",
+                    "Perl",
+                    "PHP",
+                    "Python",
+                    "Ruby",
+                    "Scala",
+                    "Scheme"
+                ];
+                $("#tags").autocomplete({
+                    source : availableTags
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <center>
+            <div class = "ui-widget">
+                <h2>UI Autocomplete using JQuery</h2>
+                <small>Type in the input box to get the autocomplete dropdown</small>
+                <br/>
+                <label for ="tags">Tags: </label>
+                <input id="tags">
+            </div>
+        </center>
+    </body>
+</html>

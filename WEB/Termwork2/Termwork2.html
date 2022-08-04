@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <style>
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            left: 100%;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h2>SUBJECTS offered @ 3rd Semester</h2>
+
+        <div class="dropdown">
+            <button class="btn btn-default" type="button" data-toggle="dropdown">Subject Dropdown
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">7th Semester</a></li>
+                <li><a href="#">5th Semester</a></li>
+                <li class="dropdown-submenu">
+                    <a class="test" href="#">3rd Semester
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">DS</a></li>
+                        <li><a href="#">JAVA</a></li>
+                        <li><a href="#">WEB</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <script>
+            $(document).ready(() => {
+                $('.dropdown-submenu a.test').on('click', e => {
+                    $(this).next('ul').toggle()
+                    e.stopPropagation()
+                    e.preventDefault()
+                })
+            })
+        </script>
+    </div>
+</body>
+
+</html>
